@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-air-black: #000000;
+  --color-air-white: #FFFFFF;
+  --color-air-gray-100: #F2F2F2;
+  --color-air-gray-800: #1A1A1A;
+  --color-air-gray-900: #0D0D0D;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* ─── Base ────────────────────────────────────────── */
+:root {
+  --bg-color: #000000;
+  --text-color: #FFFFFF;
+}
+
+html {
+  scroll-behavior: auto;
+  overflow-x: clip;
+  background: var(--bg-color);
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: clip;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Noise Texture ────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+
+/* ─── Typography Enhancements ──────────────────────── */
+h1, h2, h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  color: transparent;
+}
+
+/* ─── High Contrast Sections ───────────────────────── */
+.section-white {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.section-black {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+/* ─── Buttons ──────────────────────────────────────── */
+.btn-primary {
+  background: #FFFFFF;
+  color: #000000;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  border-radius: 0; /* Brutalist sharp corners */
+  border: none;
+  cursor: none;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.btn-primary:hover {
+  background: #000000;
+  color: #FFFFFF;
+  box-shadow: 0 0 0 1px #FFFFFF inset;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  border-radius: 0;
+  border: 1px solid #FFFFFF;
+  cursor: none;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.btn-ghost:hover {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+/* ─── Grid ────────────────────────────────────────── */
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.grid-overlay-light {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* ─── Glass (B&W) ─────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-black {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ─── Thin Accents ────────────────────────────────── */
+.border-b-thin {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.border-r-thin {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFFFFF;
+}
+
+/* ─── Utilities ───────────────────────────────────── */
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.tracking-extreme {
+  letter-spacing: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .cursor-outer, .cursor-inner { display: none; }
+  body { cursor: auto; }
+}
