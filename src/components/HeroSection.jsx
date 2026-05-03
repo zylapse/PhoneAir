@@ -40,12 +40,12 @@ export default function HeroSection() {
       </div>
 
       {/* Top Bar Details - Absolute positioned so it doesn't mess with vertical flex centering */}
-      <div className="absolute top-32 left-0 w-full px-[8%] flex justify-between items-start z-10 pointer-events-none">
+      <div className="absolute top-24 md:top-32 left-0 w-full px-[8%] flex justify-between items-start z-10 pointer-events-none">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="mono text-[0.6rem] uppercase tracking-[0.4em] text-white/30"
+          className="mono text-[0.55rem] md:text-[0.6rem] uppercase tracking-[0.4em] text-white/30"
         >
           SYS.V1 <br/> ONLINE
         </motion.div>
@@ -54,14 +54,14 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.6 }}
-          className="text-right mono text-[0.6rem] uppercase tracking-[0.4em] text-white/30"
+          className="text-right mono text-[0.55rem] md:text-[0.6rem] uppercase tracking-[0.4em] text-white/30"
         >
           LAT 37.7749 <br/> LONG -122.4194
         </motion.div>
       </div>
 
       {/* Main Massive Typography */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center w-full px-[4%] mt-16">
+      <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center w-full px-[4%] mt-20 md:mt-16">
         <motion.div
           variants={container}
           initial="hidden"
@@ -70,13 +70,13 @@ export default function HeroSection() {
         >
           <motion.h1 
             variants={item} 
-            className="text-[18vw] leading-[0.85] font-extrabold tracking-tighter text-white"
+            className="text-[16vw] md:text-[18vw] leading-[0.85] font-extrabold tracking-tighter text-white"
           >
             SHAPE
           </motion.h1>
           <motion.h1 
             variants={item} 
-            className="text-[18vw] leading-[0.85] font-extrabold tracking-tighter text-transparent text-stroke opacity-60"
+            className="text-[16vw] md:text-[18vw] leading-[0.85] font-extrabold tracking-tighter text-transparent text-stroke opacity-60"
           >
             OF AIR
           </motion.h1>

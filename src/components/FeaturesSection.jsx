@@ -44,14 +44,14 @@ export default function FeaturesSection() {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
-            className="text-6xl md:text-[8vw] font-extrabold text-black tracking-tighter leading-[0.8] uppercase"
+            className="text-5xl md:text-[8vw] font-extrabold text-black tracking-tighter leading-[0.8] uppercase"
           >
             SYSTEM <br />
             ARCHITECTURE
           </motion.h2>
         </header>
 
-        <div className="flex flex-col md:flex-row gap-20 items-center mb-24">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-center mb-24">
           
           {/* Detail Panel */}
           <div 
@@ -68,15 +68,15 @@ export default function FeaturesSection() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               >
-                <span className="mono text-[0.7rem] text-black/30 block mb-8 tracking-[0.4em]">
+                <span className="mono text-[0.7rem] text-black/30 block mb-4 md:mb-8 tracking-[0.4em]">
                   [0{activeIndex + 1} / 0{features.length}]
                 </span>
                 
-                <h3 className="text-5xl md:text-7xl font-extrabold text-black mb-10 tracking-tighter leading-none uppercase">
+                <h3 className="text-4xl md:text-7xl font-extrabold text-black mb-6 md:mb-10 tracking-tighter leading-none uppercase">
                   {active.name}
                 </h3>
                 
-                <p className="text-xl md:text-2xl font-medium text-black/60 leading-relaxed mb-12 max-w-md">
+                <p className="text-lg md:text-2xl font-medium text-black/60 leading-relaxed mb-8 md:mb-12 max-w-md">
                   {active.description}
                 </p>
 
@@ -91,7 +91,7 @@ export default function FeaturesSection() {
           </div>
 
           {/* Visual Side - Abstract Typographic Kinetic Art */}
-          <div className="w-full md:w-1/2 h-[40vh] md:h-[50vh] flex items-center justify-center relative pointer-events-none">
+          <div className="w-full md:w-1/2 h-[35vh] md:h-[50vh] flex items-center justify-center relative pointer-events-none">
              {/* Massive Background Text Stroke number */}
              <div className="absolute inset-0 flex justify-center items-center overflow-hidden">
                 <AnimatePresence mode="wait">
@@ -101,7 +101,7 @@ export default function FeaturesSection() {
                     animate={{ opacity: 0.1, scale: 1 }}
                     exit={{ opacity: 0, scale: 1.2 }}
                     transition={{ duration: 0.5 }}
-                    className="text-[40vw] md:text-[25vw] font-extrabold leading-none tracking-tighter text-transparent text-stroke-black select-none absolute"
+                    className="text-[45vw] md:text-[25vw] font-extrabold leading-none tracking-tighter text-transparent text-stroke-black select-none absolute"
                   >
                     0{activeIndex + 1}
                   </motion.span>

@@ -11,6 +11,7 @@ export default function CustomCursor() {
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const [isVisible, setIsVisible] = useState(true);
 
   // Smooth springs for cursor lag
   const springConfig = { damping: 25, stiffness: 400, mass: 0.5 };
@@ -18,6 +19,15 @@ export default function CustomCursor() {
   const cursorY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
+    const checkMobile = () => {
+      // Disable on touch devices or screens smaller than 1024px
+      const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      setIsVisible(window.innerWidth > 1024 && !isTouch);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const moveCursor = (e) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -42,10 +52,13 @@ export default function CustomCursor() {
     window.addEventListener('mouseover', handleMouseOver);
 
     return () => {
+      window.removeEventListener('resize', checkMobile);
       window.removeEventListener('mousemove', moveCursor);
       window.removeEventListener('mouseover', handleMouseOver);
     };
   }, [mouseX, mouseY]);
+
+  if (!isVisible) return null;
 
   return (
     <motion.div

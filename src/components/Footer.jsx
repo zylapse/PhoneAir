@@ -45,7 +45,7 @@ export default function Footer({ onReserveClick }) {
           onClick={onReserveClick}
         >
           {[1, 2, 3, 4].map((i) => (
-            <h2 key={i} className="text-[12vw] font-extrabold tracking-tighter uppercase px-10 leading-none select-none hover:text-stroke transition-all duration-300">
+            <h2 key={i} className="text-[20vw] md:text-[12vw] font-extrabold tracking-tighter uppercase px-10 leading-none select-none hover:text-stroke transition-all duration-300">
               RESERVE NOW
             </h2>
           ))}
@@ -61,7 +61,7 @@ export default function Footer({ onReserveClick }) {
               key={item}
               href={`#${item.toLowerCase()}`}
               data-cursor="explore"
-              className="text-5xl md:text-7xl font-extrabold tracking-tighter uppercase group flex items-center gap-6"
+              className="text-4xl md:text-7xl font-extrabold tracking-tighter uppercase group flex items-center gap-6"
             >
               <span className="w-0 h-[2px] bg-white group-hover:w-12 transition-all duration-500 ease-[0.22,1,0.36,1]" />
               <span className="group-hover:translate-x-4 transition-transform duration-500 ease-[0.22,1,0.36,1]">{item}</span>
